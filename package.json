@@ -4,9 +4,12 @@
   "description": "Simple chat backend",
   "main": "backend.js",
   "repository": "https://github.com/Stocard/android-hackschool",
-  "author": "Stocard (Tobias Schürg, Martin Wenzel)",
+  "author": "Martin Wenzel, Tobias Schürg; Stocard",
   "license": "MIT",
   "dependencies": {
     "restify": "^7.2.1"
+  },
+  "scripts": {
+    "start": "node backend.js"
   }
 }
