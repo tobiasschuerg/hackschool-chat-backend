@@ -13,13 +13,18 @@ server.get('/', (req, res) => {
 
 server.post('/message', (req, res, next) => {
 	const body = req.body
+
+	if (!body.name) return res.send(422, "Name must not be empty.")
+	if (!body.message) return res.send(422, "Message must not be empty.")
+
 	body.timestamp = Date.now()
 	messages.push(req.body)
 	res.send(201, body)
+
 	return next()
 })
 
-const port = process.env.PORT || "0.0.0.0"
+const port = process.env.PORT || "1337"
 server.listen(port, () => {
 	console.log('%s listening at %s', server.name, server.url)
 })
